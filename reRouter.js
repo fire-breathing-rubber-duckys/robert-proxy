@@ -17,12 +17,6 @@ const reRouter = (req, res, next) => {
     route(servers[1], url);
   } else if (url.includes('reviews')) {
     route(servers[2], url);
-  } else if (url.includes('/product/')) {
-    let arr = url.split('/');
-    let num = arr[2];
-    request(`${servers[0]}/api/product/${num}`)
-      .on('error', (error) => console.log(error))
-      .pipe(res);
   } else {
     next();
   }
