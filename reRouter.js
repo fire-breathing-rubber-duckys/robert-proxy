@@ -17,6 +17,8 @@ const reRouter = (req, res, next) => {
     route(servers[1], url);
   } else if (url.includes('reviews')) {
     route(servers[2], url);
+  } else {
+    next();
   }
 };
 
